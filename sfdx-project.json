@@ -2,11 +2,27 @@
   "packageDirectories": [
     {
       "path": "Book_Management",
-      "default": true
+      "default": true,
+      "package": "Billie1",
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT",
+      "versionDescription": "My Package"
+    },
+    {
+      "path": "force-app",
+      "package": "Billie",
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT",
+      "default": false,
+      "versionDescription": "My Package"
     }
   ],
   "name": "BookManagement",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "62.0"
+  "sourceApiVersion": "62.0",
+  "packageAliases": {
+    "Billie": "0HodM0000000aczSAA",
+    "Billie1": "0HodM0000000aebSAA"
+  }
 }
