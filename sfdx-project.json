@@ -1,7 +1,7 @@
 {
   "packageDirectories": [
     {
-      "path": "Book_Management",
+      "path": "force-app",
       "default": true,
       "package": "Billie1",
       "versionName": "Version 1.0",
