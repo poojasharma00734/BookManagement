@@ -96,6 +96,8 @@ sf org open --target-org AssignmentOrg
   
 1. To perform the end-to-end testing , Open the app launcher and select the Book Management App , then go to Home tab the LWC component is placed on the Home tab which will display the list of books , intialy it will show 'No books available' as there is no event published yet.
 2. To publish the event the class needs to be scheduled with the cron expression or schedule class option and to run it instantly for test go to developer console and run the piece of code -> open the execute anaonymous window and paste this code "new FetchMostPublishedBooksJob().execute(null);" and click on execute.
+<img width="948" alt="Screenshot 2024-12-06 at 14 04 29" src="https://github.com/user-attachments/assets/8dd1d532-6cf6-4c42-9803-647e69a6f5cb">
+
 3. This will execute the schedule class instantly and publish the platform event.
 4. Once the event is published the results will be displayed on the home page in real time , keep the Home page open in a separate tab to see the real time results.
 
