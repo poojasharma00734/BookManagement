@@ -22,7 +22,7 @@ Repository link - https://github.com/poojasharma00734/BookManagement/tree/main
 | FetchMostPublishedBooksJob  | Apex Class  | To schedule the the end point callout and publish the platform event  |
 | ScheduledCalloutTest.cls  | Apex Test Class  | To cover the unit test cases  |
 | mostPublishedBooks  | LWC  | To display the subscribed event in a user friendly format  |
-| APIConfiguration__c  | Custom setting  | To store the end point to avoid hard coding the end point in Class as a best practing, in future this could be used to store Sandbox and production endpoints segregation and use in class to avoid Manual steps of changing endpoints |
+| APIConfiguration__c  | Custom Metadata  | To store the end point to avoid hard coding the end point in Class as a best practing, in future this could be used to store Sandbox and production endpoints segregation and use in class to avoid Manual steps of changing endpoints |
 | MostPublishedBooks__e  | Platform Event  | Contains fields provided in the end point response  |
 | Book Management  | Lightning App  | App the place the LWC component to displays the list of books   |
 | Book_Management_UtilityBar.flexipage-meta.xml |  Flexi Page  | Added utility Bar for the Home page   |
