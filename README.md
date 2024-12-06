@@ -15,7 +15,8 @@
 # - Github repository containing all the developed components
 
 Repository link - https://github.com/poojasharma00734/BookManagement/tree/main
-Component List
+# Component List
+
 | Component Name  | Type | Description |
 | ------------- | ------------- | ------------- |
 | FetchMostPublishedBooksJob  | Apex Class  | To schedule the the end point callout and publish the platform event  |
@@ -109,7 +110,7 @@ sf org open --target-org AssignmentOrg
    c. Persist Data in Browser Storage : If the data does not need to be stored permanently in Salesforce, you can temporarily persist it in the browser using Local Storage or Session Storage.
 
 
-   | Use Case  | Best Option | Why? |
+| Use Case  | Best Option | Why? |
 | ------------- | ------------- | ------------- |
 | Real-time event processing  | Replay ID  | Ensures all events are received without creating additional Salesforce storage overhead. |
 | Persistent, queryable data  | Custom Object Storage  | Enables long-term storage, reporting, and relational integration with Salesforce records.  |
