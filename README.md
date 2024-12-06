@@ -25,6 +25,8 @@ Repository link - https://github.com/poojasharma00734/BookManagement/tree/main
 | APIConfiguration__c  | Custom setting  | To store the end point to avoid hard coding the end point in Class as a best practing, in future this could be used to store Sandbox and production endpoints segregation and use in class to avoid Manual steps of changing endpoints |
 | MostPublishedBooks__e  | Platform Event  | Contains fields provided in the end point response  |
 | Book Management  | Lightning App  | App the place the LWC component to displays the list of books   |
+| Book_Management_UtilityBar.flexipage-meta.xml |  Flexi Page  | Added utility Bar for the Home page   |
+| Home_Page_Default1.flexipage-meta.xml  | Flexi Page  | Flexi page for app  |
   
 # - Unit tests for the most critical functionality
 All the unit tests cases are covered in `ScheduledCalloutTest.cls` including positive and negative scenarios
