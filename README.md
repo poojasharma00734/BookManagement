@@ -15,7 +15,8 @@
 # - Github repository containing all the developed components
 
 Repository link - https://github.com/poojasharma00734/BookManagement/tree/main
-Component List
+# Component List
+
 | Component Name  | Type | Description |
 | ------------- | ------------- | ------------- |
 | FetchMostPublishedBooksJob  | Apex Class  | To schedule the the end point callout and publish the platform event  |
@@ -95,18 +96,35 @@ sf org open --target-org AssignmentOrg
   
 1. To perform the end-to-end testing , Open the app launcher and select the Book Management App , then go to Home tab the LWC component is placed on the Home tab which will display the list of books , intialy it will show 'No books available' as there is no event published yet.
 2. To publish the event the class needs to be scheduled with the cron expression or schedule class option and to run it instantly for test go to developer console and run the piece of code -> open the execute anaonymous window and paste this code "new FetchMostPublishedBooksJob().execute(null);" and click on execute.
+<img width="948" alt="Screenshot 2024-12-06 at 14 04 29" src="https://github.com/user-attachments/assets/8dd1d532-6cf6-4c42-9803-647e69a6f5cb">
+
 3. This will execute the schedule class instantly and publish the platform event.
 4. Once the event is published the results will be displayed on the home page in real time , keep the Home page open in a separate tab to see the real time results.
+
+   <img width="962" alt="Screenshot 2024-12-06 at 14 03 12" src="https://github.com/user-attachments/assets/78d66346-fa9c-4b4b-95a9-94d134fc1f17">
+
 
 ## Considerations: 
 1. As the schedule frequency is not defined , it can be run every 10 mins , every hour , every day
 2. Ephemeral Nature of Platform Events:
-   a. Real-time Streaming: Platform events are designed for real-time, transient communication. They are not stored for long-term access. Once an event is published and delivered to active subscribers, it's not retained indefinitely.
-   b. No Automatic Persistence: If the LWC is refreshed or the subscription is interrupted, previously published events that occurred before the subscription was re-established are not retained or replayed.
+   - Real-time Streaming: Platform events are designed for real-time, transient communication. They are not stored for long-term access. Once an event is published and delivered to active subscribers, it's not retained indefinitely.
+   - No Automatic Persistence: If the LWC is refreshed or the subscription is interrupted, previously published events that occurred before the subscription was re-established are not retained or replayed.
 3. To solve this problem
-   a. Store Platform Event Data in a Salesforce Object : When the Platform Event is published, also store its data in a custom Salesforce object. LWC can then query this object to retrieve the data whenever needed, even after a page refresh.
-   b. Use Replay IDs to Fetch Missed Events : Replay IDs allow you to replay missed events within Salesforce's 24-hour retention period (72 hours for retention period). Store the last processed Replay ID in a persistent store (e.g., Custom Metadata or Custom Settings). On page refresh, pass this Replay ID to the EMP API in LWC.
-   c. Persist Data in Browser Storage : If the data does not need to be stored permanently in Salesforce, you can temporarily persist it in the browser using Local Storage or Session Storage.
+   - Store Platform Event Data in a Salesforce Object : When the Platform Event is published, also store its data in a custom Salesforce object. LWC can then query this object to retrieve the data whenever needed, even after a page refresh.
+   - Use Replay IDs to Fetch Missed Events : Replay IDs allow you to replay missed events within Salesforce's 24-hour retention period (72 hours retention period for high frequency events). Store the last processed Replay ID in a persistent store (e.g., Custom Metadata or Custom Settings). On page refresh, pass this Replay ID to the EMP API in LWC.
+   - Persist Data in Browser Storage : If the data does not need to be stored permanently in Salesforce, you can temporarily persist it in the browser using Local Storage or Session Storage.
+
+
+| Use Case  | Best Option | Why? |
+| ------------- | ------------- | ------------- |
+| Real-time event processing  | Replay ID  | Ensures all events are received without creating additional Salesforce storage overhead. |
+| Persistent, queryable data  | Custom Object Storage  | Enables long-term storage, reporting, and relational integration with Salesforce records.  |
+| Temporary session data  | Browser Storage  | Ideal for lightweight, session-specific data that doesn't require long-term persistence.  |
+| Audit logs or regulatory data  | Custom Object Storage  | Ensures compliance and enables historical tracking for analysis or audits. |
+| High-frequency event processing  | Replay ID  | Avoids storage bottlenecks and leverages Salesforce's 24-hour retention.  |
+
+
+
 
 ## Best Practices
 1. Real-time + Persistent Data: Use Platform Events for real-time updates and store critical event data in Salesforce for persistence.
