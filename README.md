@@ -99,6 +99,9 @@ sf org open --target-org AssignmentOrg
 3. This will execute the schedule class instantly and publish the platform event.
 4. Once the event is published the results will be displayed on the home page in real time , keep the Home page open in a separate tab to see the real time results.
 
+   <img width="962" alt="Screenshot 2024-12-06 at 14 03 12" src="https://github.com/user-attachments/assets/78d66346-fa9c-4b4b-95a9-94d134fc1f17">
+
+
 ## Considerations: 
 1. As the schedule frequency is not defined , it can be run every 10 mins , every hour , every day
 2. Ephemeral Nature of Platform Events:
