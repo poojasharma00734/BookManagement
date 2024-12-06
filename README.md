@@ -107,12 +107,12 @@ sf org open --target-org AssignmentOrg
 ## Considerations: 
 1. As the schedule frequency is not defined , it can be run every 10 mins , every hour , every day
 2. Ephemeral Nature of Platform Events:
-   a. Real-time Streaming: Platform events are designed for real-time, transient communication. They are not stored for long-term access. Once an event is published and delivered to active subscribers, it's not retained indefinitely.
-   b. No Automatic Persistence: If the LWC is refreshed or the subscription is interrupted, previously published events that occurred before the subscription was re-established are not retained or replayed.
+   - Real-time Streaming: Platform events are designed for real-time, transient communication. They are not stored for long-term access. Once an event is published and delivered to active subscribers, it's not retained indefinitely.
+   - No Automatic Persistence: If the LWC is refreshed or the subscription is interrupted, previously published events that occurred before the subscription was re-established are not retained or replayed.
 3. To solve this problem
-   a. Store Platform Event Data in a Salesforce Object : When the Platform Event is published, also store its data in a custom Salesforce object. LWC can then query this object to retrieve the data whenever needed, even after a page refresh.
-   b. Use Replay IDs to Fetch Missed Events : Replay IDs allow you to replay missed events within Salesforce's 24-hour retention period (72 hours for retention period). Store the last processed Replay ID in a persistent store (e.g., Custom Metadata or Custom Settings). On page refresh, pass this Replay ID to the EMP API in LWC.
-   c. Persist Data in Browser Storage : If the data does not need to be stored permanently in Salesforce, you can temporarily persist it in the browser using Local Storage or Session Storage.
+   - Store Platform Event Data in a Salesforce Object : When the Platform Event is published, also store its data in a custom Salesforce object. LWC can then query this object to retrieve the data whenever needed, even after a page refresh.
+   - Use Replay IDs to Fetch Missed Events : Replay IDs allow you to replay missed events within Salesforce's 24-hour retention period (72 hours for retention period). Store the last processed Replay ID in a persistent store (e.g., Custom Metadata or Custom Settings). On page refresh, pass this Replay ID to the EMP API in LWC.
+   - Persist Data in Browser Storage : If the data does not need to be stored permanently in Salesforce, you can temporarily persist it in the browser using Local Storage or Session Storage.
 
 
 | Use Case  | Best Option | Why? |
