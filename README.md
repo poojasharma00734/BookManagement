@@ -70,8 +70,9 @@ sf org create scratch --definition-file config/project-scratch-def.json --durati
    2. Change the versionName to Version 1.0, and the versionNumber to 1.0.0.NEXT , once updated it would look like this 
         <img width="577" alt="Screenshot 2024-12-06 at 12 49 03" src="https://github.com/user-attachments/assets/af07e4ed-43a3-4f6e-a6a3-a1330bba983d">
 
-Run this command to create package version : sf package version create --package Assignment --installation-key test1234 --wait 10 --target-dev-hub DevHub
-you might see an error
+Run this command to create package version : 
+
+sf package version create --package Assignment --installation-key test1234 --wait 10 --target-dev-hub DevHub
 
 On Success a message will show "Successfully created the package version"
 
