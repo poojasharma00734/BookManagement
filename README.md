@@ -51,7 +51,7 @@ The git clone command creates the BookManagement folder using the Salesforce DX 
 sf org login web --set-default-dev-hub --alias DevHub
 
 ## Step 5: Create an unlocked package without a namespace
-sf package create --name TestAssignment --description "My Package" --package-type Unlocked --path force-app --no-namespace --target-dev-hub DevHub
+sf package create --name Assignment --description "My Package" --package-type Unlocked --path force-app --no-namespace --target-dev-hub DevHub
 
 --name is the package name. This name is an alias you can use when running subsequent packaging commands.
 --path is the directory that contains the contents of the package.
@@ -70,7 +70,7 @@ sf org create scratch --definition-file config/project-scratch-def.json --durati
    2. Change the versionName to Version 1.0, and the versionNumber to 1.0.0.NEXT , once updated it would look like this 
         <img width="577" alt="Screenshot 2024-12-06 at 12 49 03" src="https://github.com/user-attachments/assets/af07e4ed-43a3-4f6e-a6a3-a1330bba983d">
 
-Run this command to create package version : sf package version create --package TestAssignment --installation-key test1234 --wait 10 --target-dev-hub DevHub
+Run this command to create package version : sf package version create --package Assignment --installation-key test1234 --wait 10 --target-dev-hub DevHub
 you might see an error
 
 On Success a message will show "Successfully created the package version"
@@ -80,7 +80,7 @@ On Success a message will show "Successfully created the package version"
 
 ## Steps 9: Notice that the packageAliases section in sfdx-project.json has a new entry. Use the package version alias to install the package in scratch org
 
-sf package install --wait 10 --publish-wait 10 --package TestAssignment@1.0.0-1 --installation-key test1234 --no-prompt --target-org AssignmentOrg
+sf package install --wait 10 --publish-wait 10 --package Assignment@1.0.0-1 --installation-key test1234 --no-prompt --target-org AssignmentOrg
 
 Step 10: Once the package is installed you can open the scratch org
 
