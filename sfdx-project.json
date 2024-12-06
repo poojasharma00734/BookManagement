@@ -6,30 +6,6 @@
       "versionName": "Version 1.0",
       "versionNumber": "1.0.0.NEXT",
       "versionDescription": "My Package"
-    },
-    {
-      "path": "force-app",
-      "package": "UpdatedAssignment",
-      "versionName": "ver 0.1",
-      "versionNumber": "0.1.0.NEXT",
-      "default": true,
-      "versionDescription": "My Package"
-    },
-    {
-      "path": "force-app",
-      "package": "UpdatedAssignment1",
-      "versionName": "ver 0.1",
-      "versionNumber": "0.1.0.NEXT",
-      "default": false,
-      "versionDescription": "My Package"
-    },
-    {
-      "path": "force-app",
-      "package": "UpdatedBookAssignment",
-      "versionName": "ver 0.1",
-      "versionNumber": "0.1.0.NEXT",
-      "default": false,
-      "versionDescription": "My Package"
     }
   ],
   "name": "BookManagement",
@@ -37,12 +13,6 @@
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "62.0",
   "packageAliases": {
-    "Assignment": "0HodM0000000aoHSAQ",
-    "Assignment@1.0.0-1": "04tdM0000006W3dQAE",
-    "UpdatedAssignment": "0HodM0000000arVSAQ",
-    "UpdatedAssignment1": "0HodM0000000at7SAA",
-    "UpdatedAssignment1@0.1.0-1": "04tdM0000006W6rQAE",
-    "UpdatedBookAssignment": "0HodM0000000aujSAA",
-    "UpdatedBookAssignment@0.1.0-1": "04tdM0000006W8TQAU"
+    "Assignment": "0HodM0000000aoHSAQ"
   }
 }
