@@ -1,12 +1,12 @@
 # Billie Take Home Assignment:
 ## Description
 
-# 1. Implement a schedulable apex class that makes a callout to the https://eoheai3ashoyzos.m.pipedream.net endpoint. As a result it should publish a platform event MostPublishedBooks__e containing a list of books sorted by the edition (the number of copies published), from highest to lowest, where the edition size exceeds 600,000 copies.
+## 1. Implement a schedulable apex class that makes a callout to the https://eoheai3ashoyzos.m.pipedream.net endpoint. As a result it should publish a platform event MostPublishedBooks__e containing a list of books sorted by the edition (the number of copies published), from highest to lowest, where the edition size exceeds 600,000 copies.
    For this usecase a schedule class has been developed - `FetchMostPublishedBooksJob.cls` which needs to be scheduled and there could be multiple option to schedule it daily , hourly or every 10 mins to get the response from the given end point.
    
    
 
-# 2. Implement a LWC which subscribes to the MostPublishedBooks__e event with lightning/empApi and displays the list of books in a user-friendly format.
+## 2. Implement a LWC which subscribes to the MostPublishedBooks__e event with lightning/empApi and displays the list of books in a user-friendly format.
    LWC component has been developed - `mostPublishedBooks` which showing the subscription of published event in a User friendly format , currently its placed on the home page of a Lightning app named `Book Management` created for this use case.
 
 
