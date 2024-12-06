@@ -1,18 +1,11 @@
 {
-  "packageDirectories": [
-    {
-      "path": "force-app",
-      "package": "Assignment",
-      "versionName": "Version 1.0",
-      "versionNumber": "1.0.0.NEXT",
-      "versionDescription": "My Package"
-    }
-  ],
-  "name": "BookManagement",
-  "namespace": "",
-  "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "62.0",
-  "packageAliases": {
-    "Assignment": "0HodM0000000aoHSAQ"
-  }
+   "packageDirectories": [
+      {
+         "path": "force-app",
+         "default": true
+      }
+   ],
+   "namespace": "",
+   "sfdcLoginUrl": "https://login.salesforce.com",
+   "sourceApiVersion": "62.0"
 }
