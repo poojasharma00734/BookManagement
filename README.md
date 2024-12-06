@@ -108,6 +108,18 @@ sf org open --target-org AssignmentOrg
    b. Use Replay IDs to Fetch Missed Events : Replay IDs allow you to replay missed events within Salesforce's 24-hour retention period (72 hours for retention period). Store the last processed Replay ID in a persistent store (e.g., Custom Metadata or Custom Settings). On page refresh, pass this Replay ID to the EMP API in LWC.
    c. Persist Data in Browser Storage : If the data does not need to be stored permanently in Salesforce, you can temporarily persist it in the browser using Local Storage or Session Storage.
 
+
+   | Use Case  | Best Option | Why? |
+| ------------- | ------------- | ------------- |
+| Real-time event processing  | Replay ID  | Ensures all events are received without creating additional Salesforce storage overhead. |
+| Persistent, queryable data  | Custom Object Storage  | Enables long-term storage, reporting, and relational integration with Salesforce records.  |
+| Temporary session data  | Browser Storage  | Ideal for lightweight, session-specific data that doesn't require long-term persistence.  |
+| Audit logs or regulatory data  | Custom Object Storage  | Ensures compliance and enables historical tracking for analysis or audits. |
+| High-frequency event processing  | Replay ID  | Avoids storage bottlenecks and leverages Salesforce's 24-hour retention.  |
+
+
+
+
 ## Best Practices
 1. Real-time + Persistent Data: Use Platform Events for real-time updates and store critical event data in Salesforce for persistence.
 2. Data Cleanup: Schedule jobs to archive or delete stale event data from the custom object.
