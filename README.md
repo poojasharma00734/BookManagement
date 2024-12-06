@@ -32,40 +32,40 @@ All the unit tests cases are covered in `ScheduledCalloutTest.cls` including pos
 unlocked package and install it into a scratch org
 Assumptions : VS code is already installed with SFDX and Salesforce CLI 
 
-Step 1: Clone this repository to your local when you want to push the source code 
+## Step 1: Clone this repository to your local when you want to push the source code 
 git clone https://github.com/poojasharma00734/BookManagement
 The git clone command creates the BookManagement folder using the Salesforce DX project structure, and contains a DX project file and a scratch org definition file.
 
 <img width="351" alt="Screenshot 2024-12-06 at 12 28 20" src="https://github.com/user-attachments/assets/a8c47695-dc43-43a4-9481-f785fdbae543">
 
 
-Step 2 : To To create a package and to use the scratch org in the Org enter Dev Hub in the Quick Find box and select Dev Hub.
+## Step 2 : To To create a package and to use the scratch org in the Org enter Dev Hub in the Quick Find box and select Dev Hub.
 <img width="1153" alt="Screenshot 2024-12-06 at 12 19 45" src="https://github.com/user-attachments/assets/1e889f63-4d40-4e89-a8d8-9489ae0d19af">
 
-Step 3 : Select Enable Unlocked Packages and Second-Generation Managed Packages
+## Step 3 : Select Enable Unlocked Packages and Second-Generation Managed Packages
 <img width="1154" alt="Screenshot 2024-12-06 at 12 20 19" src="https://github.com/user-attachments/assets/d9b34d0d-9c28-45a3-bce4-3e8eca8eaa1b">
 
-Step 4: we need to first authorize to your Dev Hub org, and log in to it.
+## Step 4: we need to first authorize to your Dev Hub org, and log in to it.
 sf org login web --set-default-dev-hub --alias DevHub
 
-Step 5: Create an unlocked package without a namespace
+## Step 5: Create an unlocked package without a namespace
 sf package create --name Assignment --description "My Package" --package-type Unlocked --path force-app --no-namespace --target-dev-hub DevHub
 
 --name is the package name. This name is an alias you can use when running subsequent packaging commands.
 --path is the directory that contains the contents of the package.
 --packagetype indicates which kind of package you’re creating, in this case, unlocked.
 
-Step 6: Open sfdx-project.json to verify the package created , you can see the package name that you defined, with placeholders for the version name and version number. The command also creates a packageAliases section, which maps the package name (Assignment) to its corresponding package ID (0HodM0000000aoHSAQ)
+## Step 6: Open sfdx-project.json to verify the package created , you can see the package name that you defined, with placeholders for the version name and version number. The command also creates a packageAliases section, which maps the package name (Assignment) to its corresponding package ID (0HodM0000000aoHSAQ)
 
 <img width="570" alt="Screenshot 2024-12-06 at 12 43 58" src="https://github.com/user-attachments/assets/4817830d-19bf-4be2-90e8-e0cf328e4fd1">
 
-Step 7: Create Scratch org to test your package version
+## Step 7: Create Scratch org to test your package version
 
 sf org create scratch --definition-file config/project-scratch-def.json --duration-days 30 --alias AssignmentOrg --target-dev-hub DevHub
 
-Step 8: Create the Package Version and Install It in Your Scratch Org
-        1. Open the sfdx-project.json to update the package version options
-        2. Change the versionName to Version 1.0, and the versionNumber to 1.0.0.NEXT , once updated it would look like this 
+## Step 8: Create the Package Version and Install It in Your Scratch Org
+   1. Open the sfdx-project.json to update the package version options
+   2. Change the versionName to Version 1.0, and the versionNumber to 1.0.0.NEXT , once updated it would look like this 
         <img width="577" alt="Screenshot 2024-12-06 at 12 49 03" src="https://github.com/user-attachments/assets/af07e4ed-43a3-4f6e-a6a3-a1330bba983d">
 
 Run this command to create package version : sf package version create --package dreamhouse --installation-key test1234 --wait 10 --target-dev-hub DevHub
@@ -79,7 +79,7 @@ On Success a message will show "Successfully created the package version"
 <img width="981" alt="Screenshot 2024-12-06 at 12 54 03" src="https://github.com/user-attachments/assets/694ad209-7649-436c-8866-a57f794dd6b5">
 
 
-Steps 9: Notice that the packageAliases section in sfdx-project.json has a new entry. Use the package version alias to install the package in scratch org
+## Steps 9: Notice that the packageAliases section in sfdx-project.json has a new entry. Use the package version alias to install the package in scratch org
 
 sf package install --wait 10 --publish-wait 10 --package Assignment@1.0.0-1 --installation-key test1234 --no-prompt --target-org AssignmentOrg
 
