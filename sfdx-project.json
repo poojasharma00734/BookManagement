@@ -2,8 +2,7 @@
   "packageDirectories": [
     {
       "path": "force-app",
-      "default": true,
-      "package": "Billie1",
+      "package": "Assignment",
       "versionName": "Version 1.0",
       "versionNumber": "1.0.0.NEXT",
       "versionDescription": "My Package"
@@ -14,6 +13,7 @@
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "62.0",
   "packageAliases": {
-    "Billie1": "0HodM0000000aebSAA"
+    "Assignment": "0HodM0000000aoHSAQ",
+    "Assignment@1.0.0-1": "04tdM0000006W3dQAE"
   }
 }
