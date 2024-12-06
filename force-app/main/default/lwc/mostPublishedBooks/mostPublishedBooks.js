@@ -35,7 +35,6 @@ export default class MostPublishedBooks extends LightningElement {
 
         // Subscribe to the platform event channel
         subscribe(this.channelName, -1, messageCallback).then((response) => {
-            console.log('Subscription successful: ', response);
             this.subscription = response;
         }).catch((error) => {
             console.error('Subscription error: ', error);
@@ -45,7 +44,6 @@ export default class MostPublishedBooks extends LightningElement {
     unsubscribeFromPlatformEvent() {
         if (this.subscription) {
             unsubscribe(this.subscription).then(() => {
-                console.log('Unsubscribed successfully');
                 this.subscription = null;
             }).catch((error) => {
                 console.error('Unsubscribe error: ', error);
