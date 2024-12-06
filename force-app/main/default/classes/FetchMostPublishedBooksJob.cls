@@ -9,21 +9,21 @@ global class FetchMostPublishedBooksJob implements Schedulable {
      */
     @Future(callout = true)
     private static void processBooks() {
-        // Fetch endpoint from custom setting
-        APIConfiguration__c config = APIConfiguration__c.getInstance();
+        // as an example we can Fetch endpoint from custom setting but to avoid the post deployment steps commented for now
+        /* APIConfiguration__c config = APIConfiguration__c.getInstance();
 
         if (config == null || String.isBlank(config.API_Endpoint__c)) {
             logError('Custom setting or endpoint is not configured properly.');
             return;
         }
 
-        String endpoint = config.API_Endpoint__c;
+        String endpoint = config.API_Endpoint__c; */
 
         try {
             // Perform HTTP callout
             Http http = new Http();
             HttpRequest request = new HttpRequest();
-            request.setEndpoint(endpoint);
+            request.setEndpoint('https://eoheai3ashoyzos.m.pipedream.net');
             request.setMethod('GET');
             HttpResponse response = http.send(request);
 
