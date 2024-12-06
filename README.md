@@ -24,8 +24,9 @@ Repository link - https://github.com/poojasharma00734/BookManagement/tree/main
 | mostPublishedBooks  | LWC  | To display the subscribed event in a user friendly format  |
 | MostPublishedBooks__e  | Platform Event  | Contains fields provided in the end point response  |
 | Book Management  | Lightning App  | App the place the LWC component to displays the list of books   |
-| Book_Management_UtilityBar.flexipage-meta.xml |  Flexi Page  | Added utility Bar for the Home page   |
-| Home_Page_Default1.flexipage-meta.xml  | Flexi Page  | Flexi page for app  |
+| Billie_Book_Management_UtilityBar |  Flexi Page  | Added utility Bar for the Home page   |
+| Home_Page_Default.flexipage-meta.xml  | Flexi Page  | Flexi page for app  |
+| Screenshot_20241206_at_1513391.asset  | contentassets  | Store the company image for app  |
   
 # - Unit tests for the most critical functionality
 All the unit tests cases are covered in `ScheduledCalloutTest.cls` including positive and negative scenarios
