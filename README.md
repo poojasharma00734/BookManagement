@@ -22,7 +22,6 @@ Repository link - https://github.com/poojasharma00734/BookManagement/tree/main
 | FetchMostPublishedBooksJob  | Apex Class  | To schedule the the end point callout and publish the platform event  |
 | ScheduledCalloutTest.cls  | Apex Test Class  | To cover the unit test cases  |
 | mostPublishedBooks  | LWC  | To display the subscribed event in a user friendly format  |
-| APIConfiguration__c  | Custom setting  | To store the end point to avoid hard coding the end point in Class as a best practing, in future this could be used to store Sandbox and production endpoints segregation and use in class to avoid Manual steps of changing endpoints |
 | MostPublishedBooks__e  | Platform Event  | Contains fields provided in the end point response  |
 | Book Management  | Lightning App  | App the place the LWC component to displays the list of books   |
 | Book_Management_UtilityBar.flexipage-meta.xml |  Flexi Page  | Added utility Bar for the Home page   |
@@ -98,10 +97,11 @@ sf org open --target-org AssignmentOrg
   
 1. To perform the end-to-end testing , Open the app launcher and select the Book Management App , then go to Home tab the LWC component is placed on the Home tab which will display the list of books , intialy it will show 'No books available' as there is no event published yet.
 2. To publish the event the class needs to be scheduled with the cron expression or schedule class option and to run it instantly for test go to developer console and run the piece of code -> open the execute anaonymous window and paste this code "new FetchMostPublishedBooksJob().execute(null);" and click on execute.
+   Note : the end point is currenlty hard coded in class to avoid the post deployment steps else it could be stored in custom setting or named credentials for best practices.
 <img width="948" alt="Screenshot 2024-12-06 at 14 04 29" src="https://github.com/user-attachments/assets/8dd1d532-6cf6-4c42-9803-647e69a6f5cb">
 
-3. This will execute the schedule class instantly and publish the platform event.
-4. Once the event is published the results will be displayed on the home page in real time , keep the Home page open in a separate tab to see the real time results.
+4. This will execute the schedule class instantly and publish the platform event.
+5. Once the event is published the results will be displayed on the home page in real time , keep the Home page open in a separate tab to see the real time results.
 
    <img width="962" alt="Screenshot 2024-12-06 at 14 03 12" src="https://github.com/user-attachments/assets/78d66346-fa9c-4b4b-95a9-94d134fc1f17">
 
