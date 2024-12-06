@@ -12,6 +12,7 @@
     <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
     <label>Book Management</label>
     <navType>Standard</navType>
+    <tabs>standard-home</tabs>
     <tabs>standard-Account</tabs>
     <tabs>standard-Case</tabs>
     <uiType>Lightning</uiType>
