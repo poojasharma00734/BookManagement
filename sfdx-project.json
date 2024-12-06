@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "packageDirectories": [
      {
         "path": "force-app",
@@ -10,15 +9,3 @@
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "62.0"
 }
-=======
-   "packageDirectories": [
-      {
-         "path": "force-app",
-         "default": true
-      }
-   ],
-   "namespace": "",
-   "sfdcLoginUrl": "https://login.salesforce.com",
-   "sourceApiVersion": "62.0"
-}
->>>>>>> c53f80524b4c56490cc15c56e1dcf6fe282ce36d
